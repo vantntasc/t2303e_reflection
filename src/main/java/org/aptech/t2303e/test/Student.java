@@ -1,25 +1,26 @@
-package org.aptech.t2303e.reflection;
+package org.aptech.t2303e.test;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 import org.aptech.t2303e.reflection.annotations.Comlumn;
 import org.aptech.t2303e.reflection.annotations.Id;
 import org.aptech.t2303e.reflection.annotations.Table;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.Date;
-//@Data
-//@AllArgsConstructor
+@Data
+@AllArgsConstructor
+@Builder
 @Table(tableName = "student_table_1")
 public class Student{
     @Id(columnName = "id_column")
     private long id;
     @Comlumn(columnName = "name")
     private String name;
-    @Comlumn(columnName = "date_of_birth")
-    private Date dateOfBirth;
+//    @Comlumn(columnName = "date_of_birth")
+//    private Date dateOfBirth;
     @Comlumn(columnName = "address")
     private String address;
 

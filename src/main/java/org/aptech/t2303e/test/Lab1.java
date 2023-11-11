@@ -1,4 +1,4 @@
-package org.aptech.t2303e.reflection;
+package org.aptech.t2303e.test;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
@@ -13,7 +13,7 @@ public class Lab1 {
 
     private  static void getClassInfo() throws ClassNotFoundException, NoSuchMethodException {
         // get class by class name (with package)
-        Class<?> clazz = Class.forName("org.aptech.t2303e.reflection.Student");
+        Class<?> clazz = Class.forName("org.aptech.t2303e.test.Student");
         System.err.println("Name : "+ clazz.getName());
         System.err.println("Simple Name : "+ clazz.getSimpleName());
         System.err.println("Package  :" + clazz.getPackage().getName());
