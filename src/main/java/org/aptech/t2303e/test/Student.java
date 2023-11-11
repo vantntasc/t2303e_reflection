@@ -13,14 +13,12 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @Builder
-@Table(tableName = "student_table_1")
+@Table(tableName = "student_table")
 public class Student{
-    @Id(columnName = "id_column")
+    @Id(columnName = "id")
     private long id;
     @Comlumn(columnName = "name")
     private String name;
-//    @Comlumn(columnName = "date_of_birth")
-//    private Date dateOfBirth;
     @Comlumn(columnName = "address")
     private String address;
 

@@ -5,7 +5,8 @@ public enum StringSql {
     WHERE("WHERE"),
     EQUAL("="),
     SPACE(" "),
-    QUESTION_MARK("?")
+    QUESTION_MARK("?"),
+    SEMI_COLON(";")
     ;
     public final String val;
     private  StringSql(String val) {
