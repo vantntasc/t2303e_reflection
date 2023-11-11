@@ -6,7 +6,9 @@ public enum StringSql {
     EQUAL("="),
     SPACE(" "),
     QUESTION_MARK("?"),
-    SEMI_COLON(";")
+    SEMI_COLON(";"),
+    LIMIT("LIMIT"),
+    OFFSET("OFFSET")
     ;
     public final String val;
     private  StringSql(String val) {

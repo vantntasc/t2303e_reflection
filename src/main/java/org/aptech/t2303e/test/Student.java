@@ -7,19 +7,20 @@ import org.apache.commons.lang3.StringUtils;
 import org.aptech.t2303e.reflection.annotations.Comlumn;
 import org.aptech.t2303e.reflection.annotations.Id;
 import org.aptech.t2303e.reflection.annotations.Table;
+import org.aptech.t2303e.reflection.consts.DataType;
 
 import java.lang.reflect.Field;
 import java.util.Date;
 @Data
 @AllArgsConstructor
 @Builder
-@Table(tableName = "student_table")
+@Table(tableName = "student_tab le")
 public class Student{
-    @Id(columnName = "id")
+    @Id(columnName = "id", autoIncrement = false)
     private long id;
-    @Comlumn(columnName = "name")
+    @Comlumn(columnName = "name", type = DataType.VARCHAR)
     private String name;
-    @Comlumn(columnName = "address")
+    @Comlumn(columnName = "address", type = DataType.VARCHAR)
     private String address;
 
     public static void main(String[] args) {

@@ -7,4 +7,5 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Id {
     String columnName();
+    boolean autoIncrement() default true;
 }

@@ -72,7 +72,56 @@ public abstract class JpaRepositoryCloneImpl<T> implements JpaRepositoryClone<T>
         }
         return null;
     }
-    Boolean insert(T t){
+    @Override
+    public List<T> getAll(){
+        PreparedStatement preSt;
+        String sql  = new StringBuilder(StringSql.SELECT_CLAUSE.val).append(StringSql.SPACE.val)
+                .append(tableName).append(StringSql.SPACE.val).append(StringSql.SEMI_COLON.val)
+                .toString();
+        System.err.println(sql);
+        Connection conn = Datasource.getConn();
+        try {
+            preSt  = conn.prepareStatement(sql);
+            ResultSet rs = preSt.executeQuery();
+            List<T> data = rowMapper(rs);
+            if(data != null && data.size() > 0){
+                return data;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
         return null;
     };
+    public List<T> getAll(int limit , int offset){
+        PreparedStatement preSt;
+        String sql  = new StringBuilder(StringSql.SELECT_CLAUSE.val).append(StringSql.SPACE.val)
+                .append(tableName).append(StringSql.SPACE.val).append(StringSql.LIMIT.val)
+                .append(StringSql.SPACE.val).append(StringSql.QUESTION_MARK.val).append(StringSql.SPACE.val)
+                .append(StringSql.OFFSET.val)
+                .append(StringSql.SPACE.val).append(StringSql.QUESTION_MARK.val).append(StringSql.SPACE.val)
+                .append(StringSql.SEMI_COLON.val)
+                .toString();
+        System.err.println(sql);
+        Connection conn = Datasource.getConn();
+        try {
+            preSt  = conn.prepareStatement(sql);
+            preSt.setInt(1,limit);
+            preSt.setInt(2,offset);
+            ResultSet rs = preSt.executeQuery();
+            List<T> data = rowMapper(rs);
+            if(data != null && data.size() > 0){
+                return data;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    };
+//    Boolean insert(T t){
+//        return null;
+//    };
 }
