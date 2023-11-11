@@ -10,6 +10,7 @@ public class Lab1 {
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException {
         getClassInfo();
     }
+
     private  static void getClassInfo() throws ClassNotFoundException, NoSuchMethodException {
         // get class by class name (with package)
         Class<?> clazz = Class.forName("org.aptech.t2303e.reflection.Student");
