@@ -5,8 +5,6 @@ import java.lang.annotation.*;
 @Documented
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Id {
-    String columnName();
-    boolean autoIncrement() default true;
-    // not null
+public @interface Value {
+    public String value();
 }

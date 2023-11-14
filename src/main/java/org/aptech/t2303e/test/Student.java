@@ -20,7 +20,7 @@ public class Student{
     private long id;
     @Comlumn(columnName = "name", type = DataType.VARCHAR)
     private String name;
-    @Comlumn(columnName = "address", type = DataType.VARCHAR)
+    @Comlumn(columnName = "address", type = DataType.INT)
     private String address;
 
     public static void main(String[] args) {
